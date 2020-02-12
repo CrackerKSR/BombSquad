@@ -31,7 +31,7 @@ body {
     .topnav {
   overflow: hidden;
   background-color: rgba(32,32,32,0.7);
-  position: fixed;
+        position: fixed;
         
 }
 
@@ -43,6 +43,7 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 18px;
+    
 }
 
 .topnav a:hover {
@@ -128,8 +129,8 @@ img {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin-top: 70px;
   padding: 0;
+    z-index: 1;
 }
     
 
@@ -186,13 +187,61 @@ img {
   font-weight: 400;
 }
 
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
 
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
 </style>
 </head>
 <body>
 
 <video autoplay muted loop id="myVideo">
-  <source src="https://bselite.000webhostapp.com/fire.mp4">
+  <source src="fire.mp4" type="video/mp4">
 </video>
 
 <div class="content">
@@ -202,10 +251,23 @@ img {
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
 <a href="#about">Mods</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <a href="javascript:void(0);" class="icon" onclick="openNav()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
+    
+<!--    full screen nav-->
+    
+    <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+    <!--    full screen nav code end-->
     
     <div class="main">
   <ul class="cards">
@@ -275,14 +337,14 @@ img {
 </div>
 
 <script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
 }
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+
 </script>
 
 </body>
