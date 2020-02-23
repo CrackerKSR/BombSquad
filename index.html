@@ -91,8 +91,9 @@ body {
 }
 
 .main{
-  max-width: 1200px;
+/*  max-width: 1200px;*/
   margin: 0 auto;
+    width: 100%;
     
 }
 
@@ -133,17 +134,18 @@ img {
   padding: 0;
     z-index: 1;
 }
-    
+
+    .card:hover{
+        
+        box-shadow: 0px 0px 20px 0px red; 
+        
+    }
 
 .cards_item {
   display: flex;
   padding: 1rem;
-    border-radius: 40px;
 }
 
-    .cards_item:hover{
-        box-shadow: 0px 0px 14px 0px red;
-    }
 
 @media (min-width: 40rem) {
   .cards_item {
@@ -158,7 +160,8 @@ img {
 }
 
 .card {
-  background: rgba(0,0,0,0.3);
+/*  background: rgba(255,255,255,0.3);*/
+    background: rgba(0,141,197,0.4);
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -168,7 +171,6 @@ img {
 
 .card_content {
   padding: 1rem;
-  background: rgba(0,0,0,0.3);
 }
 
 .card_title {
@@ -237,6 +239,52 @@ img {
     right: 35px;
   }
 }
+    
+    #lab_social_icon_footer {
+  padding: 40px 0;
+  background-color: #dedede;
+}
+
+#lab_social_icon_footer a {
+  color: #333;
+}
+
+#lab_social_icon_footer .social:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+#lab_social_icon_footer .social {
+  -webkit-transform: scale(0.8);
+  /* Browser Variations: */
+  
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+/*
+    Multicoloured Hover Variations
+*/
+
+#lab_social_icon_footer #social-fb:hover {
+  color: #3B5998;
+}
+
+#lab_social_icon_footer #social-tw:hover {
+  color: #4099FF;
+}
+
+#lab_social_icon_footer #social-gp:hover {
+  color: #d34836;
+}
+
+#lab_social_icon_footer #social-em:hover {
+  color: #f39c12;
+}
+    
 </style>
 </head>
 <body>
@@ -246,28 +294,31 @@ img {
 </video>
    
 
-<div class="content">
+<div class="content" id="content">
     <div class="topnav" id="myTopnav">
-  <a href="#home" >Home</a>
+  <a href="#content" >Home</a>
   <a href="#news">News</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
-<a href="#about">Mods</a>
+<a href="#main">Mods</a>
   <a href="javascript:void(0);" class="icon" onclick="openNav()">
     <i class="fa fa-bars"></i>
   </a>
 </div>
     
-    <div class="welcome" style="background-color: rgba(0,0,0,0.7); height:1000px;">
+<!--    <div class="welcome" style="background-image: url('https://bselite.000webhostapp.com/welcome%20(1).webp'); background-attachment: fixed; height:1000px;">-->
+    <section>
+    <div class="welcome" style="width: 100%; height: 100%;">
     <center><h3 style="color:whitesmoke; font-family:cursive; font-size: 60px; padding-top: 100px; ">WELCOME GAMER'S</h3></center>
-        <center><img src="https://bselite.000webhostapp.com/BombSquadLogo2%20(1).webp" style="width: 240px;"></center>
+        <center><img src="https://bselite.000webhostapp.com/BombSquadLogo2%20(1).webp" style="width: 240px; margin-bottom: 340px"></center>
+<!--        <center><h2 style="color: white">Introducing BombSquad, an explosive arcade-style party game best enjoyed with several friends and a large couch.</h2></center>-->
     </div>
-    
+    </section>
 <!--    full screen nav-->
     
     <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
+  <div class="overlay-content">                                                                       
     <a href="#">About</a>
     <a href="#">Services</a>
     <a href="#">Clients</a>
@@ -276,7 +327,8 @@ img {
 </div>
     <!--    full screen nav code end-->
     
-    <div class="main">
+    <div class="main" id="main">
+        <center><h2 style="color: white; font-size: 53px;">MODS</h2></center>
   <ul class="cards">
     <li class="cards_item">
       <div class="card">
@@ -340,7 +392,20 @@ img {
       </li> 
   </ul>
 </div> 
-    
+    <section id="lab_social_icon_footer">
+<!-- Include Font Awesome Stylesheet in Header -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <center>
+        <div class="text-center center-block">
+                <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+	            <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+	            <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+	            <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+    </div>
+        </center>
+</div>
+</section>
 </div>
 
 <script>
@@ -351,6 +416,7 @@ img {
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
+    
 
 </script>
 
